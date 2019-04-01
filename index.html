@@ -7,6 +7,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
@@ -15,6 +17,159 @@
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
+
+  <style media="screen">
+    body{
+    font-family:'Lato', sans-serif;
+    margin: 0;
+  }
+
+  .hero{
+  background: url('img/Preinicio/Preinicio-Fondo.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+    color:white;
+    padding: 32px 15px;
+    display: grid;
+    grid-template-columns: minmax(auto, auto);
+    justify-content: center;
+  }
+
+  .hero-container{
+    font-family:'Lato', sans-serif;
+    font-size: 400;
+    color:white;
+    text-transform: uppercase;
+    text-align: justify;
+    text-indent: none;
+
+    display: grid;
+    grid-template-columns: 1fr 400px 200px;
+    /* grid-template-rows:  1fr 1fr 1fr; */
+    grid-template-areas:"title title form"
+                        "badge  badge badge"
+                        "direcc  mail tel";
+    justify-content: center;
+    grid-gap: 10px ;
+    }
+
+    .tel{
+      grid-area: tel;
+      margin-bottom:  100px;
+
+    }
+
+    .tel img{
+      max-width: 50px;
+
+    }
+    .mail{
+      grid-area: mail;
+      margin-bottom:  100px;
+
+    }
+    .mail img{
+      max-width: 50px;
+
+    }
+    .direcc{
+      grid-direcc: direcc;
+      margin-bottom:  100px;
+
+    }
+
+    .direcc img{
+      max-width: 50px;
+
+    }
+    .badge{
+      /* margin-top: 200px;*/
+      margin-bottom:  150px;
+    /*  margin-left: 250px*/
+      grid-area: badge;
+    }
+     .badge img{
+      max-width: 650px;
+    }
+    .empty{
+      grid-area: empty;
+      /* grid-row: 300px; */
+    }
+  .title{
+        grid-area: title;
+        font-size: 36px;
+        font-weight: normal;
+        margin:0;
+        display:flex;
+        align-items: center;
+      }
+      .form{
+            grid-area: form;
+            text-align:center;
+            background: rgba(255,255,255,0.3);
+            padding: 1.5em;
+            border-radius:10px;
+          }
+          .form input{
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+          }
+          .form p{
+            font-size: 20px;
+            color: #3a3b3f;
+            margin-bottom: 1em;
+          }
+          .form button{
+            background: #98ca3f;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border:none;
+            font-size: 16px;
+            border-bottom: 5px solid #6d932b;
+            display: inline-block;
+          }
+
+      .countdown p{
+        font-size: 20px;
+        text-align: center;
+        font-weight: 300;
+      }
+      .countdown span{
+        font-size: 33px;
+      }
+      .countdown span:after{
+        content: ":";
+        display: inline-block;
+        margin: 0.5px;
+      }
+      .countdown span:last-child:after{
+        display: none;
+      }
+      p{
+        margin: 0;
+      }
+      .description {
+        grid-area: description;
+      }
+
+      @media screen and (max-width: 768px) {
+      .hero-container {
+    grid-template-columns: 70px 1fr;
+    grid-template-areas: "badge title"
+                         "description description"
+                         "form form"
+                         "countdown countdown";
+    }
+  }
+</style>
+
 </head>
 
 <body>
@@ -23,17 +178,62 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <p>Estamos en construccion xD ....</p>
+
+  <div class="hero">
+    <div class="hero-container">
+
+      <h1 class="title"> </h1>
+
+      <div class="badge">
+        <img src="img/Preinicio/logo_min.png" alt="">
+      </div>
+
+
+      <!-- <div class="description">
+        <p>React (también llamada React.js o ReactJS) es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y
+          la comunidad de software libre, han participado en el proyecto más de mil desarrolladores diferentes.</p>
+      </div> -->
+
+
+      <form action="" class="form">
+        <p>Informes y cotizaciones</p>
+        <input type="text" placeholder="Nombre">
+        <input type="email" placeholder="Correo electronico">
+        <!-- <textarea id="mensaje" name="mensaje"  cols="40" rows="3"></textarea> -->
+        <button type="submit"> Pedir consulta</button>
+      </form>
+
+        <!-- <p>Lanzamiento</p> -->
+        <div class="direcc">
+          <img src="img/Preinicio/Direcc_min.png" alt=""><a href="#">   Dalias no.6134 Int. 2 col. Bugambilias Puebla, Pue. CP.72580</a>
+        </div>
+        <div class="mail">
+          <img src="img/Preinicio/mail_min.png" alt=""> <a href="#">  cotizaciones@corporativowlw.com </a>
+        </div>
+        <div class="tel">
+          <img src="img/Preinicio/Telefono_min.png" alt=""> <a href=<"tel:2222708050" target="_blank"> (222) 5 01 84 58</a>
+        </div>
+    </div>
+  </div>
+
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+  </script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    window.ga = function() {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
