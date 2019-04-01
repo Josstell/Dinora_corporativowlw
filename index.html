@@ -45,7 +45,7 @@
     text-indent: none;
     display: grid;
     grid-template-columns: 1fr 400px 250px;
-    grid-template-rows:  150px 1fr  1fr; 
+    grid-template-rows:  160px 1fr  1fr;
     grid-template-areas:"title title title"
                         "badge  badge form"
                         "direcc  mail tel";
@@ -178,20 +178,18 @@
         grid-area: description;
       }
 
-      /* @media only screen and (min-width:768px) {
-        .hero{
-          grid-template-columns: minmax(auto, 1024px);
-        }
+      @media screen and (max-width: 768px)  {
 
       .hero-container {
     grid-template-columns: 1fr;
-    grid-template-areas: "badge"
+    grid-template-areas: "title"
+                          "badge"
                          "form"
                          "direcc"
                          "mail"
                          "tel";
     }
-  } */
+  }
 </style>
 
 </head>
