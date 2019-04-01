@@ -43,27 +43,23 @@
     text-transform: uppercase;
     text-align: justify;
     text-indent: none;
-
     display: grid;
     grid-template-columns: 1fr 400px 250px;
-    /* grid-template-rows:  1fr 1fr 1fr; */
-    grid-template-areas:"title title form"
-                        "badge  badge badge"
+    grid-template-rows:  150px 1fr  1fr;
+    grid-template-areas:"title title title"
+                        "badge  badge form"
                         "direcc  mail tel";
     justify-content: center;
-    grid-gap: 10px ;
+    grid-gap: 100px ;
     }
 
     .tel{
       grid-area: tel;
       margin-bottom:  100px;
-
-
     }
 
     .tel img{
       max-width: 50px;
-
     }
 
     .tel a{
@@ -71,7 +67,6 @@
       font-size: 400;
       color:white;
       text-decoration: none;
-
     }
     .mail{
       grid-area: mail;
@@ -109,7 +104,7 @@
     }
     .badge{
       /* margin-top: 200px;*/
-      margin-bottom:  150px;
+      /* margin-bottom:  150px; */
     /*  margin-left: 250px*/
       grid-area: badge;
     }
