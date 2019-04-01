@@ -45,7 +45,7 @@
     text-indent: none;
 
     display: grid;
-    grid-template-columns: 1fr 400px 200px;
+    grid-template-columns: 1fr 400px 250px;
     /* grid-template-rows:  1fr 1fr 1fr; */
     grid-template-areas:"title title form"
                         "badge  badge badge"
@@ -183,15 +183,20 @@
         grid-area: description;
       }
 
-      @media screen and (max-width: 768px) {
+      /* @media only screen and (min-width:768px) {
+        .hero{
+          grid-template-columns: minmax(auto, 1024px);
+        }
+
       .hero-container {
-    grid-template-columns: 70px 1fr;
-    grid-template-areas: "badge title"
-                         "description description"
-                         "form form"
-                         "countdown countdown";
+    grid-template-columns: 1fr;
+    grid-template-areas: "badge"
+                         "form"
+                         "direcc"
+                         "mail"
+                         "tel";
     }
-  }
+  } */
 </style>
 
 </head>
