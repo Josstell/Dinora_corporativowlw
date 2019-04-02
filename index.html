@@ -1,9 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html>
+<!-- class="no-js" lang="" -->
 
 <head>
+  <title>corporativo wlw</title>
   <meta charset="utf-8">
-  <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,7 +37,7 @@
 
   <meta name="theme-color" content="#fafafa">
 
-  <style media="screen">
+  <style>
     body{
     font-family:'Lato', sans-serif;
     margin: 0;
@@ -58,15 +59,16 @@
     font-family:'Lato', sans-serif;
     font-size: 400;
     color:white;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-align: justify;
     text-indent: none;
     display: grid;
-    grid-template-columns: 1fr 400px 250px;
-    grid-template-rows:  160px 1fr  1fr;
+    grid-template-columns: 1fr 400px 350px;
+    grid-template-rows:  100px 1fr  1fr;
     grid-template-areas:"title title title"
                         "badge  badge form"
-                        "direcc  mail tel";
+                        "direcc  mail tel"
+                        ;
     justify-content: center;
     grid-gap: 100px ;
     }
@@ -141,14 +143,14 @@
         display:flex;
         align-items: center;
       }
-      .form{
+      .forma{
             grid-area: form;
             text-align:center;
             background: rgba(255,255,255,0.3);
             padding: 1.5em;
             border-radius:10px;
           }
-          .form input{
+          .forma input{
             width: 100%;
             padding: 10px;
             font-size: 16px;
@@ -157,20 +159,26 @@
             box-sizing: border-box;
             margin-bottom: 10px;
           }
-          .form p{
+          .forma p{
             font-size: 20px;
             color: white;
             margin-bottom: 1em;
           }
-          .form button{
-            background: #98ca3f;
+          .forma button{
+            background: #fe4918;
             color: white;
             padding: 10px 15px;
             border-radius: 5px;
             border:none;
             font-size: 16px;
-            border-bottom: 5px solid #6d932b;
+            border-bottom: 5px solid #de4918;
+            transition: all .3s ease;
             display: inline-block;
+          }
+          .forma button:hover{
+            background: white;
+            color: #fe4918;
+
           }
 
       .countdown p{
@@ -191,6 +199,9 @@
       }
       p{
         margin: 0;
+      }
+      p.text_muted{
+        font-size: 300;
       }
       .description {
         grid-area: description;
@@ -232,31 +243,56 @@
         <img src="img/Preinicio/logo_min.png" alt="">
       </div>
 
+      <form id="contact-form" class="forma" method="post" action="contact.php" role="form">
+        <p>Informes</p>
+                            <div class="row">
 
-      <!-- <div class="description">
-        <p>React (también llamada React.js o ReactJS) es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y
-          la comunidad de software libre, han participado en el proyecto más de mil desarrolladores diferentes.</p>
-      </div> -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Nombre *</label>
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Nombre *" required="required"
+                                            data-error="Falta nombre.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Correo electronico *</label>
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Correo electronico *" required="required"
+                                            data-error="Correo electronico valido.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6LeIiJsUAAAAAHKqZpieEccjuKGyxTWRdXNxJNgA" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                                <input class="form-control d-none" data-recaptcha="true" required data-error="Por favor complete ReCaptcha" type="hidden">
+                                <div class="help-block with-errors"></div>
+                            </div>
 
 
-      <form action="" class="form">
-        <p>Informes y cotizaciones</p>
-        <input type="text" placeholder="Nombre">
-        <input type="email" placeholder="Correo electronico">
-        <!-- <textarea id="mensaje" name="mensaje"  cols="40" rows="3"></textarea> -->
-        <button type="submit"> Pedir consulta</button>
-      </form>
+                            <input type="submit" class="btn btn-success btn-send" value="enviar mensaje">
 
-        <!-- <p>Lanzamiento</p> -->
-        <div class="direcc">
-          <img src="img/Preinicio/Direcc_min.png" alt=""><a href="https://www.google.com/maps/place/Int.+2,+Dalias+6134,+Bugambilias,+Puebla,+Pue.,+Mexico/@19.0082542,-98.2144232,16.25z/data=!4m5!3m4!1s0x85cfc0a8fbab501d:0x31e29f77b954baee!8m2!3d19.0088958!4d-98.2125856">   Dalias no.6134 Int. 2 col. Bugambilias Puebla, Pue. CP.72580</a>
-        </div>
-        <div class="mail">
-          <img src="img/Preinicio/mail_min.png" alt=""> <a href="#">  cotizaciones@corporativowlw.com </a>
-        </div>
-        <div class="tel">
-          <img src="img/Preinicio/Telefono_min.png" alt=""> <a href="tel:2225018458" target="_blank" onclick="return (navigator.userAgent.match(/Android | iPhone | movile /i));"> (222) 5 01 84 58</a>
-        </div>
+                            <p class="text-muted">
+                                <strong>*</strong> Estos campos son requeridos.</a>.
+                            </p>
+
+
+                    </form>
+
+
+
+
+    </div>
+    <div class="direcc">
+      <img src="img/Preinicio/Direcc_min.png" alt=""><a href="https://www.google.com/maps/place/Int.+2,+Dalias+6134,+Bugambilias,+Puebla,+Pue.,+Mexico/@19.0082542,-98.2144232,16.25z/data=!4m5!3m4!1s0x85cfc0a8fbab501d:0x31e29f77b954baee!8m2!3d19.0088958!4d-98.2125856">   Dalias no.6134 Int. 2 col. Bugambilias Puebla, Pue. CP.72580</a>
+    </div>
+    <div class="mail">
+      <img src="img/Preinicio/mail_min.png" alt=""> <a href="#">  cotizaciones@corporativowlw.com </a>
+    </div>
+    <div class="tel">
+      <img src="img/Preinicio/Telefono_min.png" alt=""> <a href="tel:2225018458" target="_blank" onclick="return (navigator.userAgent.match(/Android | iPhone | movile /i));"> (222) 5 01 84 58</a>
     </div>
   </div>
 
@@ -267,6 +303,13 @@
   </script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src="validator.js"></script>
+  <script src="contact.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
